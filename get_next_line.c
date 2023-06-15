@@ -6,40 +6,11 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 20:14:04 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/06/15 16:10:43 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/06/15 17:33:29 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-char		*read_line(int fd, char *buffer, char *saved);
-static char	*extract_line(char **saved);
-
-char	*get_next_line(int fd)
-{
-	static char	*saved = NULL;
-	char		*buffer;
-	char		*line;
-
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
-	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!buffer)
-		return (NULL);
-	if (!saved)
-		saved = ft_strdup("");
-	saved = read_line(fd, buffer, saved);
-	free(buffer);
-	if (!saved)
-		return (NULL);
-	line = extract_line(&saved);
-	if (!line)
-	{
-		free(saved);
-		saved = NULL;
-	}
-	return (line);
-}
 
 char	*read_line(int fd, char *buffer, char *saved)
 {
@@ -73,10 +44,8 @@ static char	*extract_line(char **saved)
 	char	*line;
 	char	*temp;
 	int		i;
-	int 	j;
 
 	i = 0;
-	j = 0;
 	while ((*saved)[i] != '\n' && (*saved)[i] != '\0')
 		i++;
 	if ((*saved)[i] == '\n')
@@ -100,3 +69,28 @@ static char	*extract_line(char **saved)
 	return (line);
 }
 
+char	*get_next_line(int fd)
+{
+	static char	*saved = NULL;
+	char		*buffer;
+	char		*line;
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buffer)
+		return (NULL);
+	if (!saved)
+		saved = ft_strdup("");
+	saved = read_line(fd, buffer, saved);
+	free(buffer);
+	if (!saved)
+		return (NULL);
+	line = extract_line(&saved);
+	if (!line)
+	{
+		free(saved);
+		saved = NULL;
+	}
+	return (line);
+}
