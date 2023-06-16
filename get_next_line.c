@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 20:14:04 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/06/15 17:33:29 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/06/16 22:10:13 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,20 @@ char	*read_line(int fd, char *buffer, char *saved)
 		free(temp);
 		newline_ptr = ft_strchr(saved, '\n');
 	}
-	if (bytes_read <= 0 && saved && saved[0] == '\0')
+	if (bytes_read == -1 || (bytes_read <= 0 && saved && saved[0] == '\0'))
 	{
 		free(saved);
+		saved = NULL;
 		return (NULL);
 	}
 	return (saved);
 }
 
-static char	*extract_line(char **saved)
+static char	*extract_line(char **saved, int i)
 {
 	char	*line;
 	char	*temp;
-	int		i;
 
-	i = 0;
 	while ((*saved)[i] != '\n' && (*saved)[i] != '\0')
 		i++;
 	if ((*saved)[i] == '\n')
@@ -71,7 +70,7 @@ static char	*extract_line(char **saved)
 
 char	*get_next_line(int fd)
 {
-	static char	*saved = NULL;
+	static char	*saved;
 	char		*buffer;
 	char		*line;
 
@@ -86,7 +85,7 @@ char	*get_next_line(int fd)
 	free(buffer);
 	if (!saved)
 		return (NULL);
-	line = extract_line(&saved);
+	line = extract_line(&saved, 0);
 	if (!line)
 	{
 		free(saved);
