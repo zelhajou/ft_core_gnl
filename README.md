@@ -35,7 +35,7 @@ int main(void) {
     int fd = open("file.txt", O_RDONLY);
     char *line;
 
-    while ((line = get_next_line(fd)) != NULL) {∂∂
+    while ((line = get_next_line(fd)) != NULL) {
         printf("%s\n", line);
         free(line);
     }
@@ -57,4 +57,4 @@ char *get_next_line(int fd);
 
 ## Return Value
 
-The get_next_line function returns a pointer to a string containing the next line read from the file descriptor. It returns NULL when the end of the file is reached or an error occurs.
+The `get_next_line` function returns a pointer to a string containing the next line read from the file descriptor. It returns `NULL` when the end of the file is reached or an error occurs.
