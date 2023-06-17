@@ -6,13 +6,13 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 20:14:04 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/06/16 22:10:13 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/06/17 19:21:53 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*read_line(int fd, char *buffer, char *saved)
+static char	*read_line(int fd, char *buffer, char *saved)
 {
 	int		bytes_read;
 	char	*temp;
