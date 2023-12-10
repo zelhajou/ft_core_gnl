@@ -1,5 +1,4 @@
-
-![42_get_next_line_banner_new](https://github.com/zelhajou/get_next_line/assets/39954629/d630334c-7934-46d3-b25f-1a09d6639183)
+![gnl](https://github.com/zelhajou/get_next_line/assets/39954629/1431df63-4f93-4520-9304-1f2e9c8deba0)
 
 # get_next_line
 
