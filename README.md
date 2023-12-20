@@ -1,8 +1,7 @@
-![gnl](https://github.com/zelhajou/get_next_line/assets/39954629/1431df63-4f93-4520-9304-1f2e9c8deba0)
 
-# get_next_line
+![ascii-text-art](https://github.com/zelhajou/get_next_line/assets/39954629/101271cd-0de4-4bf4-8516-867175c3a894)
 
-`get_next_line` is a function designed to read a file descriptor line by line in the C programming language. This repository contains an implementation of the `get_next_line` function, which can be used to read lines from a file or standard input.
+`get_next_line()` is a function designed to read a file descriptor line by line in the C programming language. This repository contains an implementation of the `get_next_line()` function, which can be used to read lines from a file or standard input.
 
 ## Introduction
 
