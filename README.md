@@ -59,6 +59,18 @@ char *get_next_line(int fd);
 
 - `fd`: The file descriptor from which to read the next line.
 
+
 ## Return Value
 
 The `get_next_line` function returns a pointer to a string containing the next line read from the file descriptor. It returns `NULL` when the end of the file is reached or an error occurs.
+
+## Explanation
+
+| | |
+|-|-|
+| ![Pasted image 20230925130344](https://github.com/user-attachments/assets/cbf64f9d-268d-4924-afbe-f69d9ed3bf26) | ![Pasted image 20230925130415](https://github.com/user-attachments/assets/7e76893e-a17c-4fb9-a248-773602dbeccf) |
+
+----
+
+
+
