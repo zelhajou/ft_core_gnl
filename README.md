@@ -70,6 +70,10 @@ The `get_next_line` function returns a pointer to a string containing the next l
 |-|-|
 | ![Pasted image 20230925130344](https://github.com/user-attachments/assets/cbf64f9d-268d-4924-afbe-f69d9ed3bf26) | ![Pasted image 20230925130415](https://github.com/user-attachments/assets/7e76893e-a17c-4fb9-a248-773602dbeccf) |
 
+
+![syscalls](https://github.com/user-attachments/assets/291f13df-ab6e-454f-a7f4-4ec1886aa2d0)
+
+
 ----
 
 
