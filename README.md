@@ -7,6 +7,9 @@
 
 The get_next_line function reads a line from a file descriptor and returns it as a string. It provides a convenient way to process large files line by line without having to load the entire file into memory at once.
 
+![file-descriptors](https://github.com/user-attachments/assets/cad86f37-84d0-4619-8ddb-6072bffdbede)
+
+
 ## Usage
 
 To use the get_next_line function in your C program, you can follow these steps:
